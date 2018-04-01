@@ -29,6 +29,7 @@ remote-configuration {
   # ~~~~~
   # Retrieves configuration from CoreOS etcd
   etcd {
+
     # API endpoint. HTTPS endpoint could be used,
     # but the SSL certificate must be valid
     endpoint = "http://127.0.0.1:2379/"
