@@ -110,23 +110,6 @@ public class EtcdProviderTest {
             false,
             remoteConfig.getBoolean("db.default.disabled")
         );
-
-        // File
-        final File file = new File("./test");
-        try {
-            final InputStream initialStream = new FileInputStream(file);
-            final byte[] buffer = new byte[128];
-            final int nbRead = initialStream.read(buffer);
-            buffer[nbRead] = '\0';
-            Assert.assertTrue(nbRead > 0);
-            Assert.assertEquals(
-                "Hello World!",
-                new String(buffer, 0, nbRead)
-            );
-        } catch (final IOException ex) {
-            ex.printStackTrace();
-            Assert.fail();
-        }
     }
 
     @Test
@@ -154,6 +137,23 @@ public class EtcdProviderTest {
             Arrays.asList(1, 2, 3, 4, 5),
             remoteConfig.getIntList("test.db.default.excludedIds")
         );
+
+        // File
+        final File file = new File("./test");
+        try {
+            final InputStream initialStream = new FileInputStream(file);
+            final byte[] buffer = new byte[128];
+            final int nbRead = initialStream.read(buffer);
+            buffer[nbRead] = '\0';
+            Assert.assertTrue(nbRead > 0);
+            Assert.assertEquals(
+                "Hello World!",
+                new String(buffer, 0, nbRead)
+            );
+        } catch (final IOException ex) {
+            ex.printStackTrace();
+            Assert.fail();
+        }
     }
 
     @Test
