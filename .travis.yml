@@ -1,0 +1,22 @@
+language: java
+
+jdk:
+    - oraclejdk8
+
+before_script:
+    - wget "https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz"
+    - tar xf "etcd-v3.2.18-linux-amd64.tar.gz"
+    - mv etcd-v3.2.18-linux-amd64 etcd
+    - ./etcd/etcd&
+
+script:
+    - mvn compile
+    - ./etcd/etcdctl set "test/db.default.driver" "org.postgresql.Driver"
+    - ./etcd/etcdctl set "test/db/default/timeout" "5000"
+    - ./etcd/etcdctl set "test/db/default/excludedIds" "[1,2,3,4,5]"
+    - ./etcd/etcdctl set "test/db/default/disabled" "false"
+    - ./etcd/etcdctl set "my/key" "Hello World"
+    - ./etcd/etcdctl set "file.test" "<FILE>./test;SGVsbG8gV29ybGQh"
+    - echo -e "123456" | ./etcd/etcdctl user add root
+    - ./etcd/etcdctl auth enable
+    - mvn test
