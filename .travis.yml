@@ -8,6 +8,7 @@ before_script:
     - tar xf "etcd-v3.2.18-linux-amd64.tar.gz"
     - mv etcd-v3.2.18-linux-amd64 etcd
     - ./etcd/etcd&
+    - sleep 5s
 
 script:
     - mvn compile

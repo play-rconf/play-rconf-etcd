@@ -6,7 +6,7 @@
 
     <groupId>io.play-rconf</groupId>
     <artifactId>play-rconf-etcd</artifactId>
-    <version>18.04</version>
+    <version>18.07</version>
     <name>Play Remote Configuration - CoreOS etcd</name>
     <description>Retrieves configuration from CoreOS etcd</description>
     <url>https://github.com/play-rconf/play-rconf-etcd</url>
