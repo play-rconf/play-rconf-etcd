@@ -127,7 +127,7 @@
         <dependency>
             <groupId>com.github.play-rconf</groupId>
             <artifactId>play-rconf-sdk</artifactId>
-            <version>release~18.04u3</version>
+            <version>release~18.05</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
