@@ -1,7 +1,7 @@
 language: java
 
 jdk:
-    - oraclejdk8
+    - openjdk8
 
 before_script:
     - wget "https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz"

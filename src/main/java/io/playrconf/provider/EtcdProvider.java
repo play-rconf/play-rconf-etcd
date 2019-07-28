@@ -32,7 +32,7 @@ import io.playrconf.sdk.FileCfgObject;
 import io.playrconf.sdk.KeyValueCfgObject;
 import io.playrconf.sdk.exception.ProviderException;
 import io.playrconf.sdk.exception.RemoteConfException;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.RegExUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -78,7 +78,7 @@ public class EtcdProvider extends AbstractProvider {
                 // Process current configuration object
                 final String cfgKey;
                 if (prefix.isEmpty()) {
-                    cfgKey = StringUtils.removeFirst(
+                    cfgKey = RegExUtils.removeFirst(
                         entry.get("key").asText(),
                         "/"
                     ).replace("/", ".");
